@@ -5,38 +5,26 @@
 
 .snaps__header {
   &-title {
-    @include font-face(
-      "Newsreader Regular",
-      '"../../assets/Font/Newsreader-Regular.woff',
-      400
-    );
+    font-family: "Newsreader Light", serif;
     font-size: 32px;
     line-height: 32px;
+    padding: 16px 0px 24px 16px;
   }
 
   &-subtitle {
-    @include font-face(
-      "Outfit Light",
-      "../../assets/Font/Outfit-Light.woff",
-      300
-    );
-    font-size: 18px;
+    font-family: "Outfit Light", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 40px 0px 24px 16px;
   }
 
   &-description {
-    @include font-face(
-      "Newsreader Light",
-      "../../assets/Font/Newsreader-Light.woff",
-      300
-    );
+    font-family: "Newsreader Light", serif;
     font-size: 26px;
+    line-height: 38px;
+    padding: 0px 16px 48px 16px;
     &--italic {
-      @include font-face(
-        "Newsreader Italic",
-        '"../../assets/Font/Newsreader-LightItalic.woff',
-        300,
-        italic
-      );
+      font-family: "Newsreader Italic", serif;
     }
   }
 }
