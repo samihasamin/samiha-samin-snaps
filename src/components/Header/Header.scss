@@ -1,0 +1,42 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.snaps__header {
+  &-title {
+    @include font-face(
+      "Newsreader Regular",
+      '"../../assets/Font/Newsreader-Regular.woff',
+      400
+    );
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &-subtitle {
+    @include font-face(
+      "Outfit Light",
+      "../../assets/Font/Outfit-Light.woff",
+      300
+    );
+    font-size: 18px;
+  }
+
+  &-description {
+    @include font-face(
+      "Newsreader Light",
+      "../../assets/Font/Newsreader-Light.woff",
+      300
+    );
+    font-size: 26px;
+    &--italic {
+      @include font-face(
+        "Newsreader Italic",
+        '"../../assets/Font/Newsreader-LightItalic.woff',
+        300,
+        italic
+      );
+    }
+  }
+}
