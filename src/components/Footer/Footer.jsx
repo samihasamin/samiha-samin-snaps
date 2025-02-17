@@ -33,8 +33,18 @@ function Footer() {
             <img src={Pinterest} alt="Pinterest Icon" />
           </div>
           <div className="snaps__footer-copyright">
+            <p className="snaps__footer-copyright-text">&copy; 2024 Snaps</p>
             <p className="snaps__footer-copyright-text">
-              &copy; 2024 Snaps . Terms Privacy Cookies
+              <p className="snaps__footer-copyright-text">.</p>
+            </p>
+            <p className="snaps__footer-copyright-text">
+              <a>Terms </a>
+            </p>
+            <p className="snaps__footer-copyright-text">
+              <a>Privacy</a>
+            </p>
+            <p className="snaps__footer-copyright-text">
+              <a>Cookies</a>
             </p>
           </div>
         </div>

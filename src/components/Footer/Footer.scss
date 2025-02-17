@@ -50,10 +50,17 @@
   }
 
   &-copyright {
+    display: flex;
+    gap: 10px;
     &-text {
       font-family: "Outfit Medium";
       font-size: 12px;
       color: $secondary-color-one;
+      a {
+        font-family: "Outfit Medium";
+        font-size: 12px;
+        color: $secondary-color-one;
+      }
     }
   }
 }
