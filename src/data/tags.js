@@ -1,4 +1,4 @@
-[
+const tags = [
   "Arizona",
   "Bridge",
   "Buildings",
@@ -23,5 +23,7 @@
   "Train",
   "Trees",
   "Virginia",
-  "Washington"
-]
+  "Washington",
+];
+
+export default tags;

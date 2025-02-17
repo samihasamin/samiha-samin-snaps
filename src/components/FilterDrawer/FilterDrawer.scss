@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.filtertags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 16px;
+  &__tag {
+    background-color: $secondary-color-three;
+    color: $primary-color-two;
+    display: flex;
+    gap: 8px;
+    padding: 6px 8px;
+    border: 1px solid $primary-color-two;
+    border-radius: 6px;
+  }
+}

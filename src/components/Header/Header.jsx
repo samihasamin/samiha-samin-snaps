@@ -1,18 +1,18 @@
 import "./Header.scss";
 
-function Header() {
+function Header({ setshowFilterDrawer }) {
   return (
     <>
       <section className="snaps__header">
-        <h1 className="snaps__header-title">Snaps</h1>
-        <h3 className="snaps__header-subtitle">Our mission:</h3>
-        <p className="snaps__header-description">
-          Provide to photographers a space to share photos of the neighborhoods
-          the cherish,{" "}
-          <span className="snaps__header-description--italic">
-            expressed in their unique style.
-          </span>
-        </p>
+        <div className="snaps__header-top">
+          <h1 className="snaps__header-top-title">Snaps</h1>
+          <button
+            onClick={() => setshowFilterDrawer((prevState) => !prevState)}
+            className="snaps__header-top-button"
+          >
+            Filters
+          </button>
+        </div>
       </section>
     </>
   );

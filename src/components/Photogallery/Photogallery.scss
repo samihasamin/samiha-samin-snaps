@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.gallery {
+  padding: 16px;
+  &__card {
+    background-color: $secondary-color-two; //why is background color not getting applied for the photographer and tag section??
+    border: 1px solid $secondary-color-one;
+    border-radius: 8px;
+    margin: 16px 0px;
+    overflow: hidden;
+    &-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      &-snap {
+        width: 100%;
+      }
+      &-photographer {
+        background-color: $secondary-color-two;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        border-top-left-radius: 8px;
+        font-family: "Outfit Medium";
+        font-size: 10px;
+        padding: 5px;
+      }
+    }
+    &-tags {
+      background-color: $secondary-color-two;
+      display: flex;
+      gap: 8px;
+      padding: 8px 0px 16px 16px;
+      &-tag {
+        background-color: $secondary-color-three;
+        padding: 6px 8px;
+        border: 1px solid $secondary-color-one;
+        border-radius: 6px;
+        font-family: "Outfit Medium";
+        font-size: 10px;
+      }
+    }
+  }
+}
