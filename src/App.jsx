@@ -11,10 +11,15 @@ import { v4 as uuid } from "uuid";
 function App() {
   const [photos, setPhotos] = useState(photosData);
   const [showFilterDrawer, setshowFilterDrawer] = useState(false);
-  const [activeFilter, setactiveFilter] = useState("");
+  const [activeFilter, setActiveFilter] = useState("");
 
   const handleTagClick = (tag) => {
-    setactiveFilter(tag);
+    const filteredPhotos = photosData.filter((image) =>
+      image.tags.includes(tag)
+    );
+
+    activeFilter === tag ? setPhotos(photosData) : setPhotos(filteredPhotos);
+    activeFilter === tag ? setActiveFilter("") : setActiveFilter(tag);
   };
 
   return (

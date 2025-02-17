@@ -1,4 +1,5 @@
 import "./Header.scss";
+import FilterIcon from "../../assets/images/Icons/Filter.svg";
 
 function Header({ setshowFilterDrawer }) {
   return (
@@ -6,12 +7,19 @@ function Header({ setshowFilterDrawer }) {
       <section className="snaps__header">
         <div className="snaps__header-top">
           <h1 className="snaps__header-top-title">Snaps</h1>
-          <button
-            onClick={() => setshowFilterDrawer((prevState) => !prevState)}
-            className="snaps__header-top-button"
-          >
-            Filters
-          </button>
+          <div className="snaps__header-top-filter">
+            <button
+              onClick={() => setshowFilterDrawer((prevState) => !prevState)}
+              className="snaps__header-top-filter-button"
+            >
+              Filters
+              <img
+                className="snaps__header-top-filter-icon"
+                src={FilterIcon}
+                alt="Filter Icon"
+              />
+            </button>
+          </div>
         </div>
       </section>
     </>

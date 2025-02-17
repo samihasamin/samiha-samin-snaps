@@ -3,18 +3,31 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.filtertags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 16px;
-  &__tag {
-    background-color: $secondary-color-three;
-    color: $primary-color-two;
+.filterdrawer {
+  background-color: $secondary-color-two;
+  &__title {
+    background-color: $secondary-color-two;
+    font-family: "Outfit Medium";
+    font-size: 18px;
+    padding: 16px 16px 0px 16px;
+  }
+
+  &__tags {
+    background-color: $secondary-color-two;
     display: flex;
     gap: 8px;
-    padding: 6px 8px;
-    border: 1px solid $primary-color-two;
-    border-radius: 6px;
+    flex-wrap: wrap;
+    padding: 16px;
+    &--tag {
+      background-color: $secondary-color-three;
+      color: $primary-color-two;
+      display: flex;
+      gap: 8px;
+      padding: 6px 8px;
+      border: 1px solid $primary-color-two;
+      border-radius: 6px;
+      font-family: "Outfit Medium";
+      font-size: 12px;
+    }
   }
 }
