@@ -5,12 +5,25 @@
 
 .gallery {
   padding: 16px;
+  @include tablet {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+  }
   &__card {
     background-color: $secondary-color-two; //why is background color not getting applied for the photographer and tag section??
     border: 1px solid $secondary-color-one;
     border-radius: 8px;
     margin: 16px 0px;
     overflow: hidden;
+
+    @include tablet {
+      width: calc(50% - 12px);
+      margin: 0px;
+    }
+
     &-image {
       position: relative;
       border-radius: 8px;
@@ -27,6 +40,10 @@
         font-family: "Outfit Medium";
         font-size: 10px;
         padding: 5px;
+        @include tablet {
+          font-size: 12px;
+          padding: 8px;
+        }
       }
     }
     &-tags {
@@ -41,6 +58,12 @@
         border-radius: 6px;
         font-family: "Outfit Medium";
         font-size: 10px;
+
+        @include tablet {
+          font-size: 12px;
+          padding: 8px 12px;
+          border-radius: 8px;
+        }
       }
     }
   }

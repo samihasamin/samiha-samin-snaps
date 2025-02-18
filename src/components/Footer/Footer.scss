@@ -5,40 +5,70 @@
 
 .snaps__footer {
   padding: 16px;
-
-  &-title {
-    font-family: "Newsreader Light", serif;
-    font-size: 32px;
-    line-height: 32px;
-    padding: 16px 0px 24px 0px;
+  @include tablet {
+    padding: 80px 20px 60px 20px;
   }
 
-  &-links {
-    &-talent {
+  &-top {
+    @include tablet {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      padding: 0px;
-      list-style-type: none;
-      padding-bottom: 16px;
-      &-link {
-        a {
-          font-family: "Outfit Medium";
-          text-decoration: none;
-          font-size: 12px;
-        }
+      justify-content: space-between;
+      padding-top: 20px;
+    }
+    &-title {
+      font-family: "Newsreader Light", serif;
+      font-size: 32px;
+      line-height: 32px;
+      padding: 16px 0px 24px 0px;
+
+      @include tablet {
+        font-size: 40px;
       }
     }
-    &-about {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      padding: 0px;
-      list-style-type: none;
-      &-link {
-        font-family: "Outfit Medium";
-        text-decoration: none;
-        font-size: 12px;
+
+    &-links {
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        gap: 60px;
+        padding-right: 36px;
+      }
+      &-talent {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0px;
+        list-style-type: none;
+        padding-bottom: 16px;
+        &-link {
+          a {
+            font-family: "Outfit Medium";
+            text-decoration: none;
+            font-size: 12px;
+            @include tablet {
+              font-size: 20px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+      &-about {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0px;
+        list-style-type: none;
+        &-link {
+          a {
+            font-family: "Outfit Medium";
+            text-decoration: none;
+            font-size: 12px;
+            @include tablet {
+              font-size: 20px;
+              line-height: 30px;
+            }
+          }
+        }
       }
     }
   }
@@ -47,6 +77,9 @@
     display: flex;
     gap: 16px;
     padding: 32px 0px 16px 0px;
+    @include tablet {
+      padding: 250px 0px 20px 0px;
+    }
   }
 
   &-copyright {
@@ -56,10 +89,16 @@
       font-family: "Outfit Medium";
       font-size: 12px;
       color: $secondary-color-one;
+      @include tablet {
+        font-size: 14px;
+      }
       a {
         font-family: "Outfit Medium";
         font-size: 12px;
         color: $secondary-color-one;
+        @include tablet {
+          font-size: 14px;
+        }
       }
     }
   }

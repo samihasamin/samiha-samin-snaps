@@ -10,6 +10,11 @@
     font-family: "Outfit Medium";
     font-size: 18px;
     padding: 16px 16px 0px 16px;
+    @include tablet {
+      font-size: 22px;
+      padding: 36px 0px 0px 20px;
+      letter-spacing: 1px;
+    }
   }
 
   &__tags {
@@ -18,6 +23,9 @@
     gap: 8px;
     flex-wrap: wrap;
     padding: 16px;
+    @include tablet {
+      padding: 40px 20px 80px 20px;
+    }
     &--tag {
       background-color: $secondary-color-three;
       color: $primary-color-two;
@@ -28,6 +36,11 @@
       border-radius: 6px;
       font-family: "Outfit Medium";
       font-size: 12px;
+      @include tablet {
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
     }
   }
 }

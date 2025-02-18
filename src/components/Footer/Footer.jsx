@@ -8,45 +8,61 @@ function Footer() {
   return (
     <>
       <footer className="snaps__footer">
-        <h1 className="snaps__footer-title">Snaps</h1>
-        <div className="snaps__footer-links">
-          <ul className="snaps__footer-links-talent">
-            <li className="snaps__footer-links-talent-link">
-              <a href="#">For photographers</a>
-            </li>
-            <li className="snaps__footer-links-talent-link">
-              <a href="#">Hire talent</a>
-            </li>
-            <li className="snaps__footer-links-talent-link">
-              <a href="#">Inspiration</a>
-            </li>
-          </ul>
-          <ul className="snaps__footer-links-about">
-            <li className="snaps__footer-links-about-link">About</li>
-            <li className="snaps__footer-links-about-link">Careers</li>
-            <li className="snaps__footer-links-about-link">Support</li>
-          </ul>
-          <div className="snaps__footer-socials">
+        <div className="snaps__footer-top">
+          <h1 className="snaps__footer-top-title">Snaps</h1>
+          <div className="snaps__footer-top-links">
+            <ul className="snaps__footer-top-links-talent">
+              <li className="snaps__footer-top-links-talent-link">
+                <a href="#">For photographers</a>
+              </li>
+              <li className="snaps__footer-top-links-talent-link">
+                <a href="#">Hire talent</a>
+              </li>
+              <li className="snaps__footer-top-links-talent-link">
+                <a href="#">Inspiration</a>
+              </li>
+            </ul>
+            <ul className="snaps__footer-top-links-about">
+              <li className="snaps__footer-top-links-about-link">
+                <a href="#">About</a>
+              </li>
+              <li className="snaps__footer-top-links-about-link">
+                <a href="#">Careers</a>
+              </li>
+              <li className="snaps__footer-top-links-about-link">
+                <a href="#">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="snaps__footer-socials">
+          <a href="https://www.facebook.com/">
             <img src={Facebook} alt="Facebook Icon" />
+          </a>
+          <a href="https://x.com/?lang=en">
             <img src={Twitter} alt="Twitter Icon" />
+          </a>
+          <a href="https://www.instagram.com/">
             <img src={Instagram} alt="Instagram Icon" />
+          </a>
+          <a href="https://www.pinterest.com/">
             <img src={Pinterest} alt="Pinterest Icon" />
-          </div>
-          <div className="snaps__footer-copyright">
-            <p className="snaps__footer-copyright-text">&copy; 2024 Snaps</p>
-            <p className="snaps__footer-copyright-text">
-              <p className="snaps__footer-copyright-text">.</p>
-            </p>
-            <p className="snaps__footer-copyright-text">
-              <a>Terms </a>
-            </p>
-            <p className="snaps__footer-copyright-text">
-              <a>Privacy</a>
-            </p>
-            <p className="snaps__footer-copyright-text">
-              <a>Cookies</a>
-            </p>
-          </div>
+          </a>
+        </div>
+        <div className="snaps__footer-copyright">
+          <p className="snaps__footer-copyright-text">&copy; 2024 Snaps</p>
+          <p className="snaps__footer-copyright-text">
+            <p className="snaps__footer-copyright-text">.</p>
+          </p>
+          <p className="snaps__footer-copyright-text">
+            <a>Terms </a>
+          </p>
+          <p className="snaps__footer-copyright-text">
+            <a>Privacy</a>
+          </p>
+          <p className="snaps__footer-copyright-text">
+            <a>Cookies</a>
+          </p>
         </div>
       </footer>
     </>

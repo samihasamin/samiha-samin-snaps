@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
-@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
 
 .ourmission {
   &__title {
@@ -9,6 +9,11 @@
     font-size: 12px;
     line-height: 15px;
     padding: 40px 0px 24px 16px;
+
+    @include tablet {
+      font-size: 20px;
+      padding: 40px 0px 20px 20px;
+    }
   }
 
   &__description {
@@ -16,6 +21,12 @@
     font-size: 26px;
     line-height: 38px;
     padding: 0px 16px 48px 16px;
+
+    @include tablet {
+      font-size: 40px;
+      line-height: 66px;
+      padding: 20px 0px 40px 20px;
+    }
     &--italic {
       font-family: "Newsreader Italic", serif;
     }
