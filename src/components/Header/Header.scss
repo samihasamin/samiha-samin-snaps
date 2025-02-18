@@ -20,18 +20,43 @@
       }
     }
     &-filter {
-      padding-top: 16px;
+      padding: 16px;
       display: flex;
       gap: 15px;
       &-button {
-        background-color: $secondary-color-three;
+        height: 32px;
+        width: 100px;
+        background-color: $primary-color-three;
         border-radius: 50px;
         padding: 8px 16px;
         border: 2px solid $primary-color-two;
         color: $primary-color-two;
+        font-family: "Outfit Medium";
+        text-align: center;
+        &:hover {
+          background-color: $primary-color-two;
+          color: $secondary-color-three;
+        }
+
+        @include tablet {
+          padding: 11px 22px;
+          font-size: 14px;
+          height: 40px;
+          width: 120px;
+        }
+
+        @include desktop {
+          height: 35px;
+          width: 110px;
+          align-items: center;
+        }
       }
       &-icon {
         padding-left: 5px;
+        &:hover {
+          background-color: $primary-color-two;
+          color: $secondary-color-three;
+        }
       }
     }
   }
