@@ -12,8 +12,15 @@
     gap: 24px;
     justify-content: space-between;
   }
+
+  &.filter-open .gallery__card {
+    @include desktop {
+      width: calc(50% - 12px);
+    }
+  }
+
   &__card {
-    background-color: $secondary-color-two; //why is background color not getting applied for the photographer and tag section??
+    background-color: $secondary-color-two;
     border: 1px solid $secondary-color-one;
     border-radius: 8px;
     margin: 16px 0px;
@@ -24,7 +31,12 @@
       margin: 0px;
     }
 
+    @include desktop {
+      width: calc(33% - 12px);
+    }
+
     &-image {
+      background-color: $secondary-color-two;
       position: relative;
       border-radius: 8px;
       overflow: hidden;

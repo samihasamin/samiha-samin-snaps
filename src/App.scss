@@ -1,0 +1,23 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/global" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/typography" as *;
+
+.filter-container {
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.filter-drawer.filter-open {
+  @include desktop {
+    width: 30%;
+  }
+}
+
+.photo-container.filter-open {
+  @include desktop {
+    width: 100%;
+  }
+}

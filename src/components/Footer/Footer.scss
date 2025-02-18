@@ -9,11 +9,18 @@
     padding: 80px 20px 60px 20px;
   }
 
+  @include desktop {
+    padding: 80px 36px 60px 36px;
+  }
+
   &-top {
     @include tablet {
       display: flex;
       justify-content: space-between;
       padding-top: 20px;
+    }
+    @include desktop {
+      display: none;
     }
     &-title {
       font-family: "Newsreader Light", serif;
@@ -24,6 +31,9 @@
       @include tablet {
         font-size: 40px;
       }
+      @include desktop {
+        display: none;
+      }
     }
 
     &-links {
@@ -32,6 +42,9 @@
         justify-content: flex-end;
         gap: 60px;
         padding-right: 36px;
+      }
+      @include desktop {
+        display: none;
       }
       &-talent {
         display: flex;
@@ -80,6 +93,9 @@
     @include tablet {
       padding: 250px 0px 20px 0px;
     }
+    @include desktop {
+      display: none;
+    }
   }
 
   &-copyright {
@@ -92,12 +108,105 @@
       @include tablet {
         font-size: 14px;
       }
+      @include desktop {
+        display: none;
+      }
       a {
         font-family: "Outfit Medium";
         font-size: 12px;
         color: $secondary-color-one;
         @include tablet {
           font-size: 14px;
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-desktop {
+    &-top {
+      display: none;
+      @include desktop {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-title {
+        &-text {
+          font-family: "Newsreader Light", serif;
+          font-size: 40px;
+        }
+      }
+      &-aside {
+        @include desktop {
+          display: flex;
+          gap: 80px;
+        }
+
+        &-links {
+          @include desktop {
+            display: flex;
+            gap: 60px;
+
+            &-talent {
+              list-style-type: none;
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              &-link {
+                a {
+                  text-decoration: none;
+                  font-family: "Outfit Medium";
+                  font-size: 24px;
+                }
+              }
+            }
+            &-about {
+              list-style-type: none;
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              &-link {
+                a {
+                  text-decoration: none;
+                  font-family: "Outfit Medium";
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+        }
+
+        &-socials {
+          display: flex;
+          gap: 15px;
+        }
+      }
+    }
+
+    &-socials {
+      display: none;
+    }
+    &-copyright {
+      display: none;
+    }
+
+    &-copyright {
+      @include desktop {
+        padding-top: 200px;
+        display: flex;
+        gap: 14px;
+        &-text {
+          font-family: "Outfit Medium";
+          font-size: 14px;
+          color: $secondary-color-one;
+          a {
+            font-family: "Outfit Medium";
+            font-size: 14px;
+            color: $secondary-color-one;
+          }
         }
       }
     }

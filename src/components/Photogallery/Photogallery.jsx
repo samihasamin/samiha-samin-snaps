@@ -1,9 +1,9 @@
 import "./Photogallery.scss";
 
-function Photogallery({ photos }) {
+function Photogallery({ photos, showFilterDrawer }) {
   return (
     <>
-      <div className="gallery">
+      <div className={`gallery ${showFilterDrawer ? "filter-open" : ""}`}>
         {photos.map((image, index) => {
           return (
             <div className="gallery__card" key={image.id}>

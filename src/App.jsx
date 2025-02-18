@@ -25,16 +25,27 @@ function App() {
   return (
     <>
       <Header setshowFilterDrawer={setshowFilterDrawer} />
-      {showFilterDrawer ? (
-        <FilterDrawer
-          activeFilter={activeFilter}
-          handleTagClick={handleTagClick}
-        />
-      ) : (
-        ""
-      )}
-      <OurMission />
-      <Photogallery photos={photos} />
+      <div className="filter-container">
+        <div
+          className={`filter-drawer ${showFilterDrawer ? "filter-open" : ""}`}
+        >
+          {showFilterDrawer ? (
+            <FilterDrawer
+              activeFilter={activeFilter}
+              handleTagClick={handleTagClick}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <div
+          className={`photo-container ${showFilterDrawer ? "filter-open" : ""}`}
+        >
+          <OurMission showFilterDrawer={showFilterDrawer} />
+          <Photogallery photos={photos} showFilterDrawer={showFilterDrawer} />
+        </div>
+      </div>
+
       <Footer />
     </>
   );

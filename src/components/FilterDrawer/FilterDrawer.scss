@@ -5,6 +5,9 @@
 
 .filterdrawer {
   background-color: $secondary-color-two;
+  @include desktop {
+    height: 100%;
+  }
   &__title {
     background-color: $secondary-color-two;
     font-family: "Outfit Medium";

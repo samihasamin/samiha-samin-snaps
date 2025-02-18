@@ -6,12 +6,13 @@
 .ourmission {
   &__title {
     font-family: "Outfit Light", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: lighter;
     line-height: 15px;
     padding: 40px 0px 24px 16px;
 
     @include tablet {
-      font-size: 20px;
+      font-size: 24px;
       padding: 40px 0px 20px 20px;
     }
   }
@@ -27,8 +28,19 @@
       line-height: 66px;
       padding: 20px 0px 40px 20px;
     }
+
+    @include desktop {
+      font-size: 52px;
+      width: 60%;
+    }
     &--italic {
       font-family: "Newsreader Italic", serif;
     }
+  }
+}
+
+.filter-open .ourmission__description {
+  @include desktop {
+    width: 80%;
   }
 }

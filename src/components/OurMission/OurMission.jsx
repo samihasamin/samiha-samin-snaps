@@ -1,9 +1,11 @@
 import "./OurMission.scss";
 
-function OurMission() {
+function OurMission({ showFilterDrawer }) {
   return (
     <>
-      <section className="ourmission">
+      <section
+        className={`ourmission ${showFilterDrawer ? "filter-open" : ""}`}
+      >
         <h3 className="ourmission__title">Our mission:</h3>
         <p className="ourmission__description">
           Provide to photographers a space to share photos of the neighborhoods
