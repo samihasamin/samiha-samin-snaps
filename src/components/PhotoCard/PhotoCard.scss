@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.gallery__card {
+  background-color: $secondary-color-two;
+  border: 1px solid $secondary-color-one;
+  border-radius: 8px;
+  margin: 16px 0px;
+  overflow: hidden;
+
+  @include tablet {
+    width: calc(50% - 12px);
+    margin: 0px;
+  }
+
+  @include desktop {
+    width: calc(33% - 12px);
+  }
+
+  &-image {
+    background-color: $secondary-color-two;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    &-snap {
+      width: 100%;
+    }
+    &-photographer {
+      background-color: $secondary-color-two;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      border-top-left-radius: 8px;
+      font-family: "Outfit Medium";
+      font-size: 10px;
+      padding: 5px;
+      @include tablet {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  }
+  &-tags {
+    background-color: $secondary-color-two;
+    display: flex;
+    gap: 8px;
+    padding: 8px 0px 16px 16px;
+    &-tag {
+      background-color: $secondary-color-three;
+      padding: 6px 8px;
+      border: 1px solid $secondary-color-one;
+      border-radius: 6px;
+      font-family: "Outfit Medium";
+      font-size: 10px;
+
+      @include tablet {
+        font-size: 12px;
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+    }
+  }
+}

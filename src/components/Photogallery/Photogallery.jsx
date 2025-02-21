@@ -1,31 +1,15 @@
 import "./Photogallery.scss";
+import PhotoCard from "../PhotoCard/PhotoCard";
 
-function Photogallery({ photos, showFilterDrawer }) {
+function Photogallery({ photos, showFilterDrawer, activeFilter }) {
+  const filteredPhotos = activeFilter
+    ? photos.filter((image) => image.tags.includes(activeFilter))
+    : photos;
   return (
     <>
       <div className={`gallery ${showFilterDrawer ? "filter-open" : ""}`}>
-        {photos.map((image, index) => {
-          return (
-            <div className="gallery__card" key={image.id}>
-              <div className="gallery__card-image">
-                <img
-                  className="gallery__card-image-snap"
-                  src={image.photo}
-                  alt="Snaps Image"
-                />
-                <p className="gallery__card-image-photographer">
-                  {image.photographer}
-                </p>
-              </div>
-              <div className="gallery__card-tags">
-                {image?.tags.map((tag, index) => (
-                  <div className="gallery__card-tags-tag" key={index}>
-                    {tag}
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
+        {filteredPhotos.map((image, index) => {
+          return <PhotoCard key={image.id} image={image} />;
         })}
       </div>
     </>

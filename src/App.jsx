@@ -9,43 +9,38 @@ import OurMission from "./components/OurMission/OurMission";
 import { v4 as uuid } from "uuid";
 
 function App() {
-  const [photos, setPhotos] = useState(photosData);
-  const [showFilterDrawer, setshowFilterDrawer] = useState(false);
+  const [showFilterDrawer, setShowFilterDrawer] = useState(false);
   const [activeFilter, setActiveFilter] = useState("");
 
   const handleTagClick = (tag) => {
-    const filteredPhotos = photosData.filter((image) =>
-      image.tags.includes(tag)
-    );
-
-    activeFilter === tag ? setPhotos(photosData) : setPhotos(filteredPhotos);
-    activeFilter === tag ? setActiveFilter("") : setActiveFilter(tag);
+    setActiveFilter(activeFilter === tag ? "" : tag);
   };
 
   return (
     <>
-      <Header setshowFilterDrawer={setshowFilterDrawer} />
+      <Header setShowFilterDrawer={setShowFilterDrawer} />
       <div className="filter-container">
         <div
           className={`filter-drawer ${showFilterDrawer ? "filter-open" : ""}`}
         >
-          {showFilterDrawer ? (
+          {showFilterDrawer && (
             <FilterDrawer
               activeFilter={activeFilter}
               handleTagClick={handleTagClick}
             />
-          ) : (
-            ""
           )}
         </div>
         <div
           className={`photo-container ${showFilterDrawer ? "filter-open" : ""}`}
         >
-          <OurMission showFilterDrawer={showFilterDrawer} />
-          <Photogallery photos={photos} showFilterDrawer={showFilterDrawer} />
+          <OurMission />
+          <Photogallery
+            photos={photosData}
+            showFilterDrawer={showFilterDrawer}
+            activeFilter={activeFilter}
+          />
         </div>
       </div>
-
       <Footer />
     </>
   );

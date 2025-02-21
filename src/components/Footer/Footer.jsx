@@ -51,9 +51,9 @@ function Footer() {
         </div>
         <div className="snaps__footer-copyright">
           <p className="snaps__footer-copyright-text">&copy; 2024 Snaps</p>
-          <p className="snaps__footer-copyright-text">
-            <p className="snaps__footer-copyright-text">.</p>
-          </p>
+
+          <p className="snaps__footer-copyright-text">.</p>
+
           <p className="snaps__footer-copyright-text">
             <a>Terms </a>
           </p>
@@ -113,9 +113,9 @@ function Footer() {
           <p className="snaps__footer-desktop-copyright-text">
             &copy; 2024 Snaps
           </p>
-          <p className="snaps__footer-desktop-copyright-text">
-            <p className="snaps__footer-desktop-copyright-text">.</p>
-          </p>
+
+          <p className="snaps__footer-desktop-copyright-text">.</p>
+
           <p className="snaps__footer-desktop-copyright-text">
             <a>Terms </a>
           </p>
