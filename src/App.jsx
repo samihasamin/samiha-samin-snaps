@@ -23,11 +23,13 @@ function App() {
         <div
           className={`filter-drawer ${showFilterDrawer ? "filter-open" : ""}`}
         >
-          {showFilterDrawer && (
+          {showFilterDrawer ? (
             <FilterDrawer
               activeFilter={activeFilter}
               handleTagClick={handleTagClick}
             />
+          ) : (
+            ""
           )}
         </div>
         <div
