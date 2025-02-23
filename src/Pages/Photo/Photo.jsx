@@ -1,6 +1,7 @@
 import photosData from "../../data/photosData";
 import "./Photo.scss";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "../../components/Form/Form";
@@ -40,11 +41,23 @@ function Photo() {
       <section className="photo">
         <nav className="photo__navbar">
           <div className="photo__navbar-snaps">
-            <h1 className="photo__navbar-snaps-logo">Snaps</h1>
+            <h1 className="photo__navbar-snaps-logo">
+              <Link style={{ textDecoration: "none" }} to="/">
+                {" "}
+                Snaps
+              </Link>
+            </h1>
           </div>
           <div className="photo__navbar-home">
             <img className="photo__navbar-home-arrow" src={Arrow} alt="Arrow" />
-            <button className="photo__navbar-home-button">Home</button>
+            <button className="photo__navbar-home-button">
+              <Link
+                style={{ textDecoration: "none", color: " #1E6655" }}
+                to="/"
+              >
+                Home
+              </Link>
+            </button>
           </div>
         </nav>
         <div className="photo__card">

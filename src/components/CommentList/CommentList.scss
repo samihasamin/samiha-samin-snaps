@@ -1,0 +1,52 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.comments {
+  padding: 0px 16px 50px 16px;
+  &__title {
+    &-count {
+      font-family: "Outfit Medium";
+      font-weight: lighter;
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__section {
+    &-list {
+      list-style-type: none;
+      padding-left: 0px;
+      &-commentbox {
+        border-top: 1px solid $secondary-color-one;
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          &-name {
+            font-family: "Outfit Medium";
+            font-size: 10px;
+            color: $primary-color-two;
+          }
+          &-date {
+            font-family: "Outfit Medium";
+            font-size: 10px;
+            color: $primary-color-two;
+          }
+        }
+
+        &-bottom {
+          &-text {
+            font-family: "Outfit Medium";
+            font-size: 12px;
+            color: $primary-color-one;
+          }
+        }
+      }
+    }
+  }
+}
