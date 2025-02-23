@@ -1,0 +1,99 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.photo {
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 16px 48px 16px;
+    &-snaps {
+      &-logo {
+        font-family: "Newsreader Light", serif;
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+    &-home {
+      &-button {
+        font-family: "Outfit Medium", serif;
+        font-size: 20px;
+        color: $primary-color-two;
+        border: none;
+      }
+    }
+  }
+
+  &__card {
+    background-color: $secondary-color-two;
+    border: 1px solid $secondary-color-one;
+    border-radius: 8px;
+    margin: 16px 16px;
+    overflow: hidden;
+    &-image {
+      background-color: $secondary-color-two;
+      position: relative;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    &-tags {
+      background-color: $secondary-color-two;
+      display: flex;
+      gap: 8px;
+      padding: 8px 0px 16px 16px;
+      &-tag {
+        background-color: $secondary-color-three;
+        padding: 6px 8px;
+        border: 1px solid $secondary-color-one;
+        border-radius: 6px;
+        font-family: "Outfit Medium";
+        font-size: 10px;
+      }
+    }
+
+    &__text {
+      background-color: $secondary-color-two;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Outfit Medium", serif;
+      font-size: 12px;
+      padding: 0px 16px 16px 16px;
+      &-info {
+        background-color: $secondary-color-two;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        &-likes {
+          background-color: $secondary-color-two;
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          img {
+            width: 10px;
+            height: 10px;
+          }
+          &-count {
+            p,
+            span {
+              background-color: $secondary-color-two;
+              display: flex;
+              gap: 3px;
+            }
+          }
+        }
+        &-photographer {
+          background-color: $secondary-color-two;
+        }
+      }
+      &-date {
+        p {
+          background-color: $secondary-color-two;
+        }
+      }
+    }
+  }
+}

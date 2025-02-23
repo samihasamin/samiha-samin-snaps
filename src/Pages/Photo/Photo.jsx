@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "../../components/Form/Form";
+import Arrow from "../../assets/images/Icons/Arrow.svg";
+import LikeOutline from "../../assets/images/Icons/Like_Outline.svg";
 
 const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
 const API_KEY = "?api_key=e0e24dc5-d6b8-42c2-abdd-d066b7290130";
@@ -37,22 +39,41 @@ function Photo() {
     <>
       <section className="photo">
         <nav className="photo__navbar">
-          <h1 className="photo__navbar-title">Snaps</h1>
-          <button>Home</button>
+          <div className="photo__navbar-snaps">
+            <h1 className="photo__navbar-snaps-logo">Snaps</h1>
+          </div>
+          <div className="photo__navbar-home">
+            <img className="photo__navbar-home-arrow" src={Arrow} alt="Arrow" />
+            <button className="photo__navbar-home-button">Home</button>
+          </div>
         </nav>
-        <div className="photo-card">
-          <img src={photo.photo} alt={photo.photoDescription} />
-          <div className="photo-card__tags">
+        <div className="photo__card">
+          <img
+            className="photo__card-image"
+            src={photo.photo}
+            alt={photo.photoDescription}
+          />
+          <div className="photo__card-tags">
             {photo?.tags.map((tag) => (
-              <div className="photo-card__tags-tag">{tag}</div>
+              <div className="photo__card-tags-tag">{tag}</div>
             ))}
           </div>
-          <div className="photo-card__text">
-            <div className="photo-card__text-info">
-              <p>Likes</p>
-              <p>Photo by {photo.photoprapher}</p>
+          <div className="photo__card__text">
+            <div className="photo__card__text-info">
+              <div className="photo__card__text-info-likes">
+                <img src={LikeOutline} alt="Like_Outline" />
+                <div className="photo__card__text-info-likes-count">
+                  <p>
+                    {photo.likes}
+                    <span>likes</span>
+                  </p>
+                </div>
+              </div>
+              <p className="photo__card__text-info-photographer">
+                Photo by {photo.photographer}
+              </p>
             </div>
-            <div className="photo-card__text-date">
+            <div className="photo__card__text-date">
               <p>{formattedDate}</p>
             </div>
           </div>
