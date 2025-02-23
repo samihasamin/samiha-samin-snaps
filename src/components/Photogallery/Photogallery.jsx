@@ -1,5 +1,6 @@
 import "./Photogallery.scss";
 import PhotoCard from "../PhotoCard/PhotoCard";
+import { Link } from "react-router-dom";
 
 function Photogallery({ photos, showFilterDrawer, activeFilter }) {
   const filteredPhotos = activeFilter
