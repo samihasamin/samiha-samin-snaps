@@ -66,23 +66,37 @@ function Form({ id }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={name}
-          onChange={handleNameInput}
-        />
-        <label htmlFor="comment">Comment</label>
-        <textarea
-          name="comment"
-          id="comment"
-          value={newComment}
-          onChange={handleCommentInput}
-        ></textarea>
-        <button type="submit">Submit</button>
+      <form className="snaps-form" onSubmit={handleSubmit}>
+        <div className="snaps-form__name">
+          <label className="snaps-form__name-label" htmlFor="name">
+            Name
+          </label>
+          <input
+            className="snaps-form__name-input"
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={handleNameInput}
+          />
+        </div>
+        <div className="snaps-form__comment">
+          <label className="snaps-form__comment-label" htmlFor="comment">
+            Comment
+          </label>
+          <textarea
+            className="snaps-form__comment-input"
+            name="comment"
+            id="comment"
+            value={newComment}
+            onChange={handleCommentInput}
+          ></textarea>
+        </div>
+        <div className="snaps-form__button">
+          <button className="snaps-form__button-submit" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
       <CommentList id={id} comments={comments} />
     </>

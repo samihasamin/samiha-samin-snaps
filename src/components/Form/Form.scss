@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.snaps-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px 16px 36px 16px;
+  &__name {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &-label {
+      font-family: "Outfit Medium";
+      font-size: 12px;
+    }
+    &-input {
+      height: 30px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid $secondary-color-one;
+      background-color: $secondary-color-three;
+      &:active {
+        border: 2px solid $primary-color-two; //not getting applied
+      }
+    }
+  }
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &-label {
+      font-family: "Outfit Medium";
+      font-size: 12px;
+    }
+    &-input {
+      height: 60px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid $secondary-color-one;
+      background-color: $secondary-color-three;
+      resize: none;
+      &:active {
+        border: 2px solid $primary-color-two; //not getting applied
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    &-submit {
+      border: none;
+      background-color: $primary-color-two;
+      color: $secondary-color-three;
+      border-radius: 8px;
+      font-family: "Outfit Medium";
+      font-size: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}
