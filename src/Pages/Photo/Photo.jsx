@@ -82,9 +82,9 @@ function Photo() {
                   </p>
                 </div>
               </div>
-              <p className="photo__card__text-info-photographer">
-                Photo by {photo.photographer}
-              </p>
+              <div className="photo__card__text-info-photographer">
+                <p>Photo by {photo.photographer}</p>
+              </div>
             </div>
             <div className="photo__card__text-date">
               <p>{formattedDate}</p>

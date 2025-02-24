@@ -9,11 +9,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 36px 16px 36px 16px;
+    @include tablet {
+      padding: 36px 20px 36px 20px;
+    }
     &-snaps {
       &-logo {
         font-family: "Newsreader Light", serif;
         font-size: 32px;
         line-height: 32px;
+        @include tablet {
+          font-size: 40px;
+        }
       }
     }
     &-home {
@@ -22,6 +28,9 @@
         font-size: 20px;
         color: $primary-color-two;
         border: none;
+        @include tablet {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -32,6 +41,13 @@
     border-radius: 8px;
     margin: 16px 16px;
     overflow: hidden;
+    @include tablet {
+      margin: 16px 20px;
+      border-radius: 12px;
+    }
+    @include desktop {
+      margin: 48px 200px 36px 200px;
+    }
     &-image {
       background-color: $secondary-color-two;
       position: relative;
@@ -43,14 +59,19 @@
       background-color: $secondary-color-two;
       display: flex;
       gap: 8px;
-      padding: 8px 0px 16px 16px;
+      padding: 8px 16px 16px 16px;
       &-tag {
         background-color: $secondary-color-three;
-        padding: 6px 8px;
+        padding: 6px;
         border: 1px solid $secondary-color-one;
         border-radius: 6px;
         font-family: "Outfit Medium";
         font-size: 10px;
+        @include tablet {
+          padding: 8px 12px;
+          border-radius: 8px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -58,15 +79,17 @@
       background-color: $secondary-color-two;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       font-family: "Outfit Medium", serif;
       font-size: 12px;
       padding: 0px 16px 16px 16px;
+      @include tablet {
+        font-size: 16px;
+      }
       &-info {
         background-color: $secondary-color-two;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 8px;
         &-likes {
           background-color: $secondary-color-two;
           display: flex;
@@ -75,6 +98,10 @@
           img {
             width: 10px;
             height: 10px;
+            @include tablet {
+              width: 12px;
+              height: 12px;
+            }
           }
           &-count {
             p,
@@ -86,10 +113,13 @@
           }
         }
         &-photographer {
-          background-color: $secondary-color-two;
+          p {
+            background-color: $secondary-color-two;
+          }
         }
       }
       &-date {
+        background-color: $secondary-color-two;
         p {
           background-color: $secondary-color-two;
         }
