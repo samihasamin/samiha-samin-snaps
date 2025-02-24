@@ -4,8 +4,6 @@ import Footer from "../Footer/Footer";
 import axios from "axios";
 
 function CommentList({ id, comments }) {
-  console.log(comments);
-
   function commentDate(timestamp) {
     const date = new Date(timestamp);
     return date.toLocaleDateString();
@@ -21,7 +19,10 @@ function CommentList({ id, comments }) {
           <ul className="comments__section-list">
             {comments.map((comment) => {
               return (
-                <li className="comments__section-list-commentbox">
+                <li
+                  key={comment.id}
+                  className="comments__section-list-commentbox"
+                >
                   <div className="comments__section-list-commentbox-top">
                     <p className="comments__section-list-commentbox-top-name">
                       {comment.name}

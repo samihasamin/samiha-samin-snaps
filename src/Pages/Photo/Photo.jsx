@@ -26,8 +26,6 @@ function Photo() {
     fetchPhoto();
   }, [photoId]);
 
-  console.log(photo);
-
   if (!photo) {
     return;
     <p>Loading</p>;
@@ -68,7 +66,9 @@ function Photo() {
           />
           <div className="photo__card-tags">
             {photo?.tags.map((tag) => (
-              <div className="photo__card-tags-tag">{tag}</div>
+              <div key={tag} className="photo__card-tags-tag">
+                {tag}
+              </div>
             ))}
           </div>
           <div className="photo__card__text">
