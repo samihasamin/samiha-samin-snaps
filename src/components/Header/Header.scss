@@ -4,6 +4,11 @@
 @use "../../styles/partials/typography" as *;
 
 .snaps__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   &-top {
     display: flex;
     justify-content: space-between;
@@ -46,12 +51,6 @@
           font-size: 14px;
           height: 40px;
           width: 120px;
-        }
-
-        @include desktop {
-          height: 35px;
-          width: 110px;
-          align-items: center;
         }
       }
       &-icon {

@@ -5,6 +5,11 @@
 
 .photo {
   &__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,14 +44,14 @@
     background-color: $secondary-color-two;
     border: 1px solid $secondary-color-one;
     border-radius: 8px;
-    margin: 16px 16px;
+    margin: 110px 16px 16px 16px;
     overflow: hidden;
     @include tablet {
-      margin: 16px 20px;
+      margin: 120px 20px 16px 20px;
       border-radius: 12px;
     }
     @include desktop {
-      margin: 48px 200px 36px 200px;
+      margin: 140px 200px 36px 200px;
     }
     &-image {
       background-color: $secondary-color-two;
@@ -59,7 +64,14 @@
       background-color: $secondary-color-two;
       display: flex;
       gap: 8px;
-      padding: 8px 16px 16px 16px;
+      padding: 10px 16px 16px 16px;
+      @include tablet {
+        gap: 20px;
+        padding: 25px 20px 16px 20px;
+      }
+      @include desktop {
+        gap: 25px;
+      }
       &-tag {
         background-color: $secondary-color-three;
         padding: 6px;
@@ -70,7 +82,10 @@
         @include tablet {
           padding: 8px 12px;
           border-radius: 8px;
-          font-size: 14px;
+          font-size: 18px;
+        }
+        @include desktop {
+          font-size: 20px;
         }
       }
     }
@@ -83,18 +98,27 @@
       font-size: 12px;
       padding: 0px 16px 16px 16px;
       @include tablet {
-        font-size: 16px;
+        font-size: 20px;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 16px 20px 16px;
       }
       &-info {
         background-color: $secondary-color-two;
         display: flex;
         flex-direction: column;
         gap: 8px;
+        @include tablet {
+          display: contents;
+        }
         &-likes {
           background-color: $secondary-color-two;
           display: flex;
           align-items: center;
           gap: 3px;
+          @include tablet {
+            order: 1;
+          }
           img {
             width: 10px;
             height: 10px;
@@ -116,6 +140,10 @@
           p {
             background-color: $secondary-color-two;
           }
+          @include tablet {
+            order: 2;
+            margin: 0 auto;
+          }
         }
       }
       &-date {
@@ -123,6 +151,7 @@
         p {
           background-color: $secondary-color-two;
         }
+        order: 3;
       }
     }
   }

@@ -38,14 +38,16 @@ function Form({ id }) {
     if (!newComment) {
       errorObject.comment = "Comment is required";
     }
-    console.log(errorObject);
+
     setError(errorObject);
+
+    return Object.keys(errorObject).length === 0;
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const nameInput = event.target.name.value;
-    const commentInput = { name: name, comment: newComment }; //Why is comment input an object??
+    const commentInput = { name: name, comment: newComment };
 
     const postComment = async () => {
       const response = await axios.post(

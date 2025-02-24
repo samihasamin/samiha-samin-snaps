@@ -4,6 +4,13 @@
 @use "../../styles/partials/mixins" as *;
 
 .ourmission {
+  margin-top: 80px;
+  @include tablet {
+    margin-top: 120px;
+  }
+  @include desktop {
+    margin-top: 150px;
+  }
   &__title {
     font-family: "Outfit Light", sans-serif;
     font-size: 16px;
