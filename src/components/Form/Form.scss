@@ -28,8 +28,10 @@
       border-radius: 6px;
       border: 1px solid $secondary-color-one;
       background-color: $secondary-color-three;
+      &:focus,
       &:active {
-        border: 2px solid $primary-color-two; //not getting applied
+        border: 2px solid $primary-color-two;
+        outline: none;
       }
       @include tablet {
         height: 40px;
@@ -56,8 +58,10 @@
       border: 1px solid $secondary-color-one;
       background-color: $secondary-color-three;
       resize: none;
+      &:focus,
       &:active {
-        border: 2px solid $primary-color-two; //not getting applied
+        border: 2px solid $primary-color-two;
+        outline: none;
       }
       @include tablet {
         height: 80px;
@@ -85,4 +89,8 @@
       }
     }
   }
+}
+
+.error-border {
+  border: 2px solid #b10606;
 }

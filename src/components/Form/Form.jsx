@@ -7,6 +7,7 @@ function Form({ id }) {
   const [name, setName] = useState("");
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
+  const [error, setError] = useState({});
 
   const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
   const API_KEY = "?api_key=e0e24dc5-d6b8-42c2-abdd-d066b7290130";
@@ -29,11 +30,16 @@ function Form({ id }) {
     fetchComments();
   }, [id]);
 
-  const isFormValid = () => {
-    if (!name || !newComment) {
-      return false;
+  const handleError = () => {
+    const errorObject = {};
+    if (!name) {
+      errorObject.name = "Name is required";
     }
-    return true;
+    if (!newComment) {
+      errorObject.comment = "Comment is required";
+    }
+    console.log(errorObject);
+    setError(errorObject);
   };
 
   const handleSubmit = (event) => {
@@ -53,14 +59,9 @@ function Form({ id }) {
       );
       setComments([response.data, ...comments]);
     };
-    postComment();
-
-    if (isFormValid()) {
-      alert("Comment posted sucessfully");
-    } else {
-      // name.style.border = "2px solid #d22d2d";
-      // newComment.style.border = "2px solid #d22d2d"; //Not working
-      alert("Please enter all fields");
+    const isValid = handleError();
+    if (isValid) {
+      postComment();
     }
   };
 
@@ -72,7 +73,9 @@ function Form({ id }) {
             Name
           </label>
           <input
-            className="snaps-form__name-input"
+            className={`snaps-form__name-input ${
+              error.name ? "error-border" : ""
+            }`}
             type="text"
             name="name"
             id="name"
@@ -85,7 +88,9 @@ function Form({ id }) {
             Comment
           </label>
           <textarea
-            className="snaps-form__comment-input"
+            className={`snaps-form__comment-input ${
+              error.comment ? "error-border" : ""
+            }`}
             name="comment"
             id="comment"
             value={newComment}
