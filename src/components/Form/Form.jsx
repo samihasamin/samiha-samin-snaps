@@ -41,12 +41,15 @@ function Form({ id }) {
     return Object.keys(errorObject).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const nameInput = event.target.name.value;
+
     const commentInput = { name: name, comment: newComment };
 
-    const postComment = async () => {
+    const isValid = handleError();
+    if (!isValid) return;
+
+    try {
       console.log("Sending Comment:", commentInput);
       const response = await axios.post(
         `${BASE_URL}photos/${id}/comments`,
@@ -57,11 +60,13 @@ function Form({ id }) {
           },
         }
       );
+
       setComments([response.data, ...comments]);
-    };
-    const isValid = handleError();
-    if (isValid) {
-      postComment();
+
+      setName("");
+      setNewComment("");
+    } catch (error) {
+      console.error("Error posting comment:", error);
     }
   };
 
