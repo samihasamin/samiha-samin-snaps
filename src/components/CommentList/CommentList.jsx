@@ -4,9 +4,18 @@ import Footer from "../Footer/Footer";
 import axios from "axios";
 
 function CommentList({ id, comments }) {
-  function commentDate(timestamp) {
-    const date = new Date(timestamp);
-    return date.toLocaleDateString();
+  function commentDate(comment) {
+    let date;
+
+    if (comment.timestamp && !isNaN(comment.timestamp)) {
+      date = new Date(comment.timestamp);
+    } else if (comment.date) {
+      date = new Date(comment.date);
+    } else {
+      return "Unknown Date";
+    }
+
+    return isNaN(date.getTime()) ? "Unknown Date" : date.toLocaleDateString();
   }
 
   return (
@@ -28,7 +37,7 @@ function CommentList({ id, comments }) {
                       {comment.name}
                     </p>
                     <p className="comments__section-list-commentbox-top-date">
-                      {commentDate(comment.date)}
+                      {commentDate(comment)}
                     </p>
                   </div>
                   <div className="comments__section-list-commentbox-bottom">
