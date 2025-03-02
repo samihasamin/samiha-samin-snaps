@@ -8,8 +8,7 @@ import Form from "../../components/Form/Form";
 import Arrow from "../../assets/images/Icons/Arrow.svg";
 import LikeOutline from "../../assets/images/Icons/Like_Outline.svg";
 
-const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
-const API_KEY = "?api_key=e0e24dc5-d6b8-42c2-abdd-d066b7290130";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function Photo() {
   const { photoId } = useParams();
@@ -17,18 +16,19 @@ function Photo() {
 
   useEffect(() => {
     const fetchPhoto = async () => {
-      const response = await axios.get(
-        `${BASE_URL}photos/${photoId}${API_KEY}`
-      );
+      try {
+        const response = await axios.get(`${BASE_URL}photos/${photoId}`);
 
-      setPhoto(response.data);
+        setPhoto(response.data);
+      } catch (error) {
+        console.error("Error fetching photo:", error);
+      }
     };
     fetchPhoto();
   }, [photoId]);
 
   if (!photo) {
-    return;
-    <p>Loading</p>;
+    return <p>Loading...</p>;
   }
 
   const currentDate = new Date();

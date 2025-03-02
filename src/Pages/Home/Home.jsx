@@ -9,8 +9,7 @@ import { v4 as uuid } from "uuid";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
-const API_KEY = "?api_key=e0e24dc5-d6b8-42c2-abdd-d066b7290130";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function Home() {
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
@@ -19,7 +18,7 @@ function Home() {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const response = await axios.get(`${BASE_URL}/photos${API_KEY}`);
+      const response = await axios.get(`${BASE_URL}photos`);
 
       setPhotos(response.data);
     };

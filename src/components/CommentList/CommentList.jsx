@@ -28,7 +28,7 @@ function CommentList({ id, comments }) {
                       {comment.name}
                     </p>
                     <p className="comments__section-list-commentbox-top-date">
-                      {commentDate(comment.timestamp)}
+                      {commentDate(comment.date)}
                     </p>
                   </div>
                   <div className="comments__section-list-commentbox-bottom">

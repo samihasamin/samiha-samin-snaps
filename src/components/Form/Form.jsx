@@ -9,8 +9,7 @@ function Form({ id }) {
   const [comments, setComments] = useState([]);
   const [error, setError] = useState({});
 
-  const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
-  const API_KEY = "?api_key=e0e24dc5-d6b8-42c2-abdd-d066b7290130";
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   const handleNameInput = (event) => {
     setName(event.target.value);
@@ -22,9 +21,7 @@ function Form({ id }) {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await axios.get(
-        `${BASE_URL}photos/${id}/comments${API_KEY}`
-      );
+      const response = await axios.get(`${BASE_URL}photos/${id}/comments`);
       setComments(response.data.sort((a, b) => b.timestamp - a.timestamp));
     };
     fetchComments();
@@ -50,8 +47,9 @@ function Form({ id }) {
     const commentInput = { name: name, comment: newComment };
 
     const postComment = async () => {
+      console.log("Sending Comment:", commentInput);
       const response = await axios.post(
-        `${BASE_URL}photos/${id}/comments${API_KEY}`,
+        `${BASE_URL}photos/${id}/comments`,
         commentInput,
         {
           headers: {
